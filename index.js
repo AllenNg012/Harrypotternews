@@ -10,9 +10,7 @@ const port = process.env.PORT || 8005;
 // CORS options to allow specific domains
 const corsOptions = {
   origin: [
-    "https://harrypotternews-frontend.vercel.app", // Replace with your frontend URLs
-    "https://harrypotternews-frontend-git-master-chunghinngs-projects.vercel.app", // Preview URL
-    "https://harrypotternews-frontend-20gtfzclx-chunghinngs-projects.vercel.app", // Another Preview URL
+"*"
   ],
   methods: ["GET", "POST", "DELETE", "PUT"],
   allowedHeaders: ["Content-Type", "Authorization"],
