@@ -13,34 +13,39 @@ const Home = () => {
   const [show, setShow] = useState(false);
 
   const getUserData = async () => {
-    const res = await axios.get("https://reactnodevercel-server.vercel.app/getdata", {
+    const res = await axios.get(
+      "https://reactnodevercel-server.vercel.app/getdata",
+      {
         headers: {
-            "Content-Type": "application/json"
-        }
-    });
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     if (res.data.status === 401 || !res.data) {
-        console.log("error");
+      console.log("error");
     } else {
-        setData(res.data.getUser);
+      setData(res.data.getUser);
     }
-};
+  };
 
-const dltUser = async (id) => {
-    const res = await axios.delete(`https://reactnodevercel-server.vercel.app/${id}`, {
+  const dltUser = async (id) => {
+    const res = await axios.delete(
+      `https://reactnodevercel-server.vercel.app/${id}`,
+      {
         headers: {
-            "Content-Type": "application/json"
-        }
-    });
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     if (res.data.status === 401 || !res.data) {
-        console.log("error");
+      console.log("error");
     } else {
-        getUserData();
-        setShow(true);
+      getUserData();
+      setShow(true);
     }
-};
-
+  };
 
   useEffect(() => {
     getUserData();
@@ -73,16 +78,16 @@ const dltUser = async (id) => {
                       style={{ width: "22rem", height: "18rem" }}
                       className="mb-3"
                     >
-                     <Card.Img
-    variant="top"
-    style={{
-        width: "100px",
-        textAlign: "center",
-        margin: "auto",
-    }}
-    src={`https://reactnodevercel-server.vercel.app/uploads/${el.imgpath}`}
-    className="mt-2"
-/>
+                      <Card.Img
+                        variant="top"
+                        style={{
+                          width: "100px",
+                          textAlign: "center",
+                          margin: "auto",
+                        }}
+                        src={`https://reactnodevercel-server.vercel.app/uploads/${el.imgpath}`}
+                        className="mt-2"
+                      />
                       <Card.Body className="text-center">
                         <Card.Title>User Name : {el.fname}</Card.Title>
                         <Card.Text>
