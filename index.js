@@ -5,7 +5,13 @@ require("./db/conn");
 const router = require("./routes/router");
 const cors = require("cors");
 
-
+const corsOptions = {
+    origin: /\.vercel\.app$/,  // Matches any subdomain under .vercel.app
+    methods: ["GET", "POST", "DELETE", "PUT"],  // Allow certain HTTP methods
+    allowedHeaders: ["Content-Type", "Authorization"],  // Allow headers if needed
+  };
+  app.use(cors(corsOptions));  // Apply the CORS configuration
+  
 const port = 8005;
 
 
