@@ -31,19 +31,19 @@ const Register = () => {
     formData.append("fname", fname);
 
     const config = {
-      headers: {
-        "Content-Type": "multipart/form-data"
-      }
-    }
+        headers: {
+            "Content-Type": "multipart/form-data"
+        }
+    };
 
     const res = await axios.post("https://reactnodevercel-server.vercel.app/register", formData, config);
 
     if (res.data.status === 401 || !res.data) {
-      console.log("errror")
+        console.log("error");
     } else {
-      history("/")
+        history("/");
     }
-  }
+};
 
   return (
     <>
