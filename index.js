@@ -6,19 +6,10 @@ require("./db/conn");
 const router = require("./routes/router");
 
 const port = process.env.PORT || 8005;
+app.use(cors())
 
-// CORS options to allow specific domains
-const corsOptions = {
-  origin: [
-"*"
-  ],
-  methods: ["GET", "POST", "DELETE", "PUT"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
-
-// Use CORS middleware with the options
-app.use(cors(corsOptions));
-
+ 
+  
 // Other middlewares
 app.use(express.json());
 app.use(router);
