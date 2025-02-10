@@ -6,10 +6,22 @@ require("./db/conn");
 const router = require("./routes/router");
 
 const port = process.env.PORT || 8005;
-app.use(cors())
 
- 
-  
+// CORS options to allow specific domains
+const corsOptions = {
+  origin: [
+"*"
+  ],
+  methods: ["GET", "POST", "DELETE", "PUT"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+var cors = require('cors');
+app.use(cors())
+// Use CORS middleware with the options
+app.get('/cors', (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  res.send({ "msg": "This has CORS enabled 🎈" })
+  })
 // Other middlewares
 app.use(express.json());
 app.use(router);
