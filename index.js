@@ -22,11 +22,3 @@ app.listen(port,()=>{
     console.log(`server start at port no ${port}`)
 })
 
-const corsOptions = {
-    origin: "https://harrypotternews-frontend.vercel.app", // Frontend URL
-    methods: ["GET", "POST", "DELETE"], // Methods allowed
-    allowedHeaders: ["Content-Type", "Authorization"], // Headers allowed
-  };
-  
-  app.use(cors(corsOptions));
-  
