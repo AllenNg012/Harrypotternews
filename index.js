@@ -17,7 +17,7 @@ const corsOptions = {
 };
 var cors = require('cors');
 // Use CORS middleware with the options
-
+//testing
   app.use(cors(corsOptions));
 
 // Other middlewares
