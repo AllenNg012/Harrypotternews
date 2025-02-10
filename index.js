@@ -18,6 +18,11 @@ const corsOptions = {
 var cors = require('cors');
 app.use(cors())
 // Use CORS middleware with the options
+app.get('/cors', (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  res.send({ "msg": "This has CORS enabled 🎈" })
+  })
+  app.use(cors(corsOptions));
 
 // Other middlewares
 app.use(express.json());
