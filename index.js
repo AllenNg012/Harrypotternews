@@ -1,37 +1,35 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors"); // Make sure you have this line
 const app = express();
 require("./db/conn");
 const router = require("./routes/router");
-const cors = require("cors");
 
+const port = process.env.PORT || 8005;
+
+// CORS options to allow specific domains
 const corsOptions = {
-    origin: [
-      "https://harrypotternews-frontend.vercel.app",
-      "https://harrypotternews-frontend-git-master-chunghinngs-projects.vercel.app",
-      "https://harrypotternews-frontend-chunghinngs-projects.vercel.app",
-      "https://harrypotternews-server.vercel.app", 
-      "https://harrypotternews-server-chunghinngs-projects.vercel.app", 
-      "https://harrypotternews-server-git-master-chunghinngs-projects.vercel.app"
-    ],  // List all your frontend and backend URLs here
-    methods: ["GET", "POST", "DELETE", "PUT"],  // Allowed HTTP methods
-    allowedHeaders: ["Content-Type", "Authorization"],  // Allowed headers
-  };
-  
-  app.use(cors(corsOptions));  // Apply the CORS configuration to the backend
-  
+  origin: [
+    "https://harrypotternews-frontend.vercel.app", // Replace with your frontend URLs
+    "https://harrypotternews-frontend-git-master-chunghinngs-projects.vercel.app", // Preview URL
+    "https://harrypotternews-frontend-20gtfzclx-chunghinngs-projects.vercel.app", // Another Preview URL
+  ],
+  methods: ["GET", "POST", "DELETE", "PUT"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
 
+// Use CORS middleware with the options
+app.use(cors(corsOptions));
 
+// Other middlewares
 app.use(express.json());
-app.use(cors())
 app.use(router);
 
-app.use("/uploads",express.static("./uploads"));
+app.use("/uploads", express.static("./uploads"));
 app.use("/", (req, res) => {
-    res.send("Server is running.");
-  });
+  res.send("Server is running.");
+});
 
-app.listen(port,()=>{
-    console.log(`server start at port no ${port}`)
-})
-
+app.listen(port, () => {
+  console.log(`Server started at port ${port}`);
+});
