@@ -18,7 +18,7 @@ const Home = () => {
       {
         headers: {
           "Content-Type": "application/json",
-        },
+        }
       }
     );
 
@@ -35,7 +35,7 @@ const Home = () => {
       {
         headers: {
           "Content-Type": "application/json",
-        },
+        }
       }
     );
 
