@@ -7,7 +7,7 @@ const router = require("./routes/router");
 
 const port = process.env.PORT || 8005;
 
-// CORS options to allow specific domain
+// CORS options to allow specific domains
 const corsOptions = {
   origin: [ "https://harrypotternews-frontend.vercel.app" ],
   methods: ["GET", "POST", "DELETE", "PUT"],
