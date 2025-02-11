@@ -14,7 +14,6 @@ const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization"],
   Credentials: true
 };
-var cors = require('cors');
 // Use CORS middleware with the options
 //testing
   app.use(cors(corsOptions));
