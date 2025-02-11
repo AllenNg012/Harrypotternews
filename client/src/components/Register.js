@@ -21,7 +21,7 @@ const Register = () => {
     setFile(e.target.files[0])
   }
 
-  // adduser data
+  // adduser datas
 
   const addUserData = async (e) => {
     e.preventDefault();

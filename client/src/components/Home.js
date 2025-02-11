@@ -8,7 +8,7 @@ import Alert from "react-bootstrap/Alert";
 
 const Home = () => {
   const [data, setData] = useState([]);
-  // console.log(data)
+  // console.log(data)s
 
   const [show, setShow] = useState(false);
 
