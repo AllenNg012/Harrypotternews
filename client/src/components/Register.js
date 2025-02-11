@@ -36,7 +36,7 @@ const Register = () => {
         }
     };
 
-    const res = await axios.post("harrypotternews-server.vercel.app/register", formData, config);
+    const res = await axios.post("https://harrypotternews-server.vercel.app/register", formData, config);
 
     if (res.data.status === 401 || !res.data) {
         console.log("error");

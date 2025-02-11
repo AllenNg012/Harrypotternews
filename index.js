@@ -9,11 +9,10 @@ const port = process.env.PORT || 8005;
 
 // CORS options to allow specific domains
 const corsOptions = {
-  origin: [
-"*"
-  ],
+  origin: [ "https://harrypotternews-frontend.vercel.app" ],
   methods: ["GET", "POST", "DELETE", "PUT"],
   allowedHeaders: ["Content-Type", "Authorization"],
+  Credentials: true
 };
 var cors = require('cors');
 // Use CORS middleware with the options

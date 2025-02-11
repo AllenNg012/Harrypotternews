@@ -14,7 +14,7 @@ const Home = () => {
 
   const getUserData = async () => {
     const res = await axios.get(
-      "harrypotternews-server.vercel.app/getdata",
+      "https://harrypotternews-server.vercel.app/getdata",
       {
         headers: {
           "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const Home = () => {
 
   const dltUser = async (id) => {
     const res = await axios.delete(
-      `harrypotternews-server.vercel.app/${id}`,
+      `https://harrypotternews-server.vercel.app/${id}`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -85,7 +85,7 @@ const Home = () => {
                           textAlign: "center",
                           margin: "auto",
                         }}
-                        src={`harrypotternews-server.vercel.app/uploads/${el.imgpath}`}
+                        src={`https://harrypotternews-server.vercel.app/uploads/${el.imgpath}`}
                         className="mt-2"
                       />
                       <Card.Body className="text-center">
